@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import '/Users/rakeshpuppala/Desktop/twitter-clone/src/Styles/login.css';
 
 const Signin = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -22,18 +23,26 @@ const Signin = () => {
   };
 
   return ( 
-    <div className="flex justify-center items-center h-screen bg-black">
+    <div className="flex justify-center items-center h-screen">
       <div className="bg-white shadow-md rounded-md p-8 max-w-md w-full">
         {!showSignup && !showSignin && (
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold">Welcome</h2>
-            <input 
-              type="email" 
-              placeholder="Email or Phone" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400 mb-4" 
-            />
+            <div className="mb-4 relative">
+              <input 
+                type={secondField === "email" ? "email" : "tel"} 
+                placeholder={secondField === "email" ? "Email" : "Phone"} 
+                className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" 
+              />
+            </div>
+            <div className="mb-4 flex justify-end">
+              <span 
+                className="text-blue-500 cursor-pointer"
+                onClick={toggleSecondField}
+              >
+                {secondField === "email" ? "Use Phone instead" : "Use Email instead"}
+              </span>
+            </div>
             <div className="flex justify-center mt-4">
               <Button variant="contained" color="primary" className="w-full" onClick={handleSignin}>Sign In</Button>
             </div>
@@ -62,16 +71,21 @@ const Signin = () => {
               </div>
               <div className="mb-4 relative">
                 <input type={secondField === "email" ? "email" : "tel"} placeholder={secondField === "email" ? "Email" : "Phone"} className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" />
-                <button type="button" className="absolute inset-y-0 right-0 px-3 py-1 bg-blue-500 text-white rounded-md" onClick={toggleSecondField}>
-                  {secondField === "email" ? "Phone" : "Email"}
-                </button>
+              </div>
+              <div className="mb-4 flex justify-end">
+                <span 
+                  className="text-blue-500 cursor-pointer"
+                  onClick={toggleSecondField}
+                >
+                  {secondField === "email" ? "Use Phone instead" : "Use Email instead"}
+                </span>
               </div>
               <div className="mb-4">
                 <input type="password" placeholder="Password" className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" />
               </div>
               <div className="mb-4">
                 <input type="date" placeholder="Date of Birth" className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" />
-                <p className="text-sm text-gray-500 mt-1">Please provide your Date of Birth for account verification.</p>
+                <p className="text-sm text-gray-500 mt-1">Please provide your Date of Birth</p>
               </div>
               <div className="flex justify-between">
                 <Button variant="contained" color="primary" className="w-1/2 mr-2">Sign Up</Button>
@@ -87,14 +101,22 @@ const Signin = () => {
               <p className="text-gray-500">Welcome back</p>
             </div>
             <form>
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <input 
-                  type="text" 
-                  placeholder="Email or Phone" 
+                  type={secondField === "email" ? "email" : "tel"} 
+                  placeholder={secondField === "email" ? "Email" : "Phone"} 
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)} 
                   className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" 
                 />
+              </div>
+              <div className="mb-4 flex justify-end">
+                <span 
+                  className="text-blue-500 cursor-pointer"
+                  onClick={toggleSecondField}
+                >
+                  {secondField === "email" ? "Use Phone instead" : "Use Email instead"}
+                </span>
               </div>
               <div className="mb-4">
                 <input type="password" placeholder="Password" className="bg-gray-100 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring focus:ring-blue-400" />
@@ -110,5 +132,6 @@ const Signin = () => {
     </div>
   );
 }
- 
+
+
 export default Signin;
