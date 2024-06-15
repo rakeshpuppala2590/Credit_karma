@@ -39,6 +39,14 @@
   padding: 2rem;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .text-center {
   text-align: center;
 }

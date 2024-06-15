@@ -35,8 +35,21 @@
 
 
 
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
 .p-8 {
   padding: 2rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .text-center {

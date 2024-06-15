@@ -26,16 +26,16 @@ const Signin = () => {
     setEmail(event.target.value);
   };
 
-  return ( 
-    <div className="flex justify-center items-center h-screen">
+  return (
+    <div className={`flex justify-center items-center h-screen ${showSignup || showSignin ? 'blur-background' : ''}`}>
       <div className="form-container">
         {!showSignup && !showSignin && (
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold">Welcome</h2>
             <div className="floating-label">
-              <input 
-                type={secondField === "email" ? "email" : "tel"} 
-                placeholder=" " 
+              <input
+                type={secondField === "email" ? "email" : "tel"}
+                placeholder=" "
                 className="floating-input"
                 value={email}
                 onChange={handleEmailChange}
@@ -44,8 +44,8 @@ const Signin = () => {
                 {secondField === "email" ? "Email" : "Phone"}
               </label>
             </div>
-            <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
-              <span 
+            <div className="mb-4 flex justify-end">
+              <span
                 className="text-blue-500 cursor-pointer"
                 onClick={toggleSecondField}
               >
@@ -57,9 +57,9 @@ const Signin = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-500">
-                Don't have an account?&nbsp;
-                <span 
-                  onClick={handleSignup} 
+                Don't have an account?
+                <span
+                  onClick={handleSignup}
                   className="text-blue-500 cursor-pointer ml-1"
                 >
                   Sign up
@@ -69,7 +69,7 @@ const Signin = () => {
           </div>
         )}
         {showSignup && (
-          <div>
+          <div className="overlay">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold">Sign Up</h2>
               <p className="text-gray-500">Create your account</p>
@@ -85,8 +85,8 @@ const Signin = () => {
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
               </div>
-              <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
-                <span 
+              <div className="mb-4 flex justify-end">
+                <span
                   className="text-blue-500 cursor-pointer"
                   onClick={toggleSecondField}
                 >
@@ -105,7 +105,7 @@ const Signin = () => {
           </div>
         )}
         {showSignin && (
-          <div>
+          <div className="overlay">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-semibold">Sign In</h2>
               <p className="text-gray-500">Enter your credentials</p>
@@ -117,8 +117,8 @@ const Signin = () => {
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
               </div>
-              <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
-                <span 
+              <div className="mb-4 flex justify-end">
+                <span
                   className="text-blue-500 cursor-pointer"
                   onClick={toggleSecondField}
                 >

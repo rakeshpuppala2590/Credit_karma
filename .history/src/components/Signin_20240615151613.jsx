@@ -57,7 +57,7 @@ const Signin = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-500">
-                Don't have an account?&nbsp;
+                Don't have an account? 
                 <span 
                   onClick={handleSignup} 
                   className="text-blue-500 cursor-pointer ml-1"

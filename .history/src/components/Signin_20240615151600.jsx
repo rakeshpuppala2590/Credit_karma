@@ -57,7 +57,7 @@ const Signin = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-500">
-                Don't have an account?&nbsp;
+                Don't have an account? 
                 <span 
                   onClick={handleSignup} 
                   className="text-blue-500 cursor-pointer ml-1"
@@ -130,15 +130,4 @@ const Signin = () => {
                 <label className="floating-label-text">Password</label>
               </div>
               <div className="button-container mt-4">
-                <Button variant="contained" color="primary" className="mr-2">Sign In</Button>
-                <Button variant="contained" className="ml-2" onClick={() => setShowSignin(false)}>Cancel</Button>
-              </div>
-            </form>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default Signin;
+                <Button vari

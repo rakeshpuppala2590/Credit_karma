@@ -44,7 +44,7 @@ const Signin = () => {
                 {secondField === "email" ? "Email" : "Phone"}
               </label>
             </div>
-            <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
+            <div className="mb-4 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
               <span 
                 className="text-blue-500 cursor-pointer"
                 onClick={toggleSecondField}
@@ -57,7 +57,7 @@ const Signin = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-500">
-                Don't have an account?&nbsp;
+                Don't have an account? 
                 <span 
                   onClick={handleSignup} 
                   className="text-blue-500 cursor-pointer ml-1"
@@ -85,7 +85,7 @@ const Signin = () => {
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
               </div>
-              <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
+              <div className="mb-4 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
                 <span 
                   className="text-blue-500 cursor-pointer"
                   onClick={toggleSecondField}
@@ -117,7 +117,7 @@ const Signin = () => {
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
               </div>
-              <div className="mb-2 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
+              <div className="mb-4 flex justify-end toggle-span"> {/* Adjusted margin-top here */}
                 <span 
                   className="text-blue-500 cursor-pointer"
                   onClick={toggleSecondField}
