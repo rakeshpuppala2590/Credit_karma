@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../Styles/Home.css';
-import { validateName, validateEmail, validatePhone, validatePassword, validateDateOfBirth } from './Validations';
+import { validateName, validateEmail, validatePhone, validatePassword, validateDateOfBirth } from './FormValidation';
 
 const Signin = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -123,7 +123,7 @@ const Signin = () => {
                 value={secondField === "email" ? formData.email : formData.phone}
                 onChange={handleInputChange}
               />
-              <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+              <label className="floating-label-text">
                 {secondField === "email" ? "Email" : "Phone"}
               </label>
               {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -171,7 +171,7 @@ const Signin = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.name ? 'floating-label-up' : ''}`}>Name</label>
+                <label className="floating-label-text">Name</label>
                 {errors.name && <p className="text-red-500">{errors.name}</p>}
               </div>
               <div className="floating-label">
@@ -183,7 +183,7 @@ const Signin = () => {
                   value={secondField === "email" ? formData.email : formData.phone}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+                <label className="floating-label-text">
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
                 {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -206,7 +206,7 @@ const Signin = () => {
                   value={formData.password}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.password ? 'floating-label-up' : ''}`}>Password</label>
+                <label className="floating-label-text">Password</label>
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
               </div>
               <div className="floating-label">
@@ -218,7 +218,7 @@ const Signin = () => {
                   value={formData.dob}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.dob ? 'floating-label-up' : ''}`}>Date of Birth</label>
+                <label className="floating-label-text">Date of Birth</label>
                 {errors.dob && <p className="text-red-500">{errors.dob}</p>}
               </div>
               <div className="button-container mt-4">
@@ -244,7 +244,7 @@ const Signin = () => {
                   value={secondField === "email" ? formData.email : formData.phone}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+                <label className="floating-label-text">
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
                 {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -267,7 +267,7 @@ const Signin = () => {
                   value={formData.password}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.password ? 'floating-label-up' : ''}`}>Password</label>
+                <label className="floating-label-text">Password</label>
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
               </div>
               <div className="button-container mt-4">

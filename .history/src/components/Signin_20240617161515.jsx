@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../Styles/Home.css';
-import { validateName, validateEmail, validatePhone, validatePassword, validateDateOfBirth } from './Validations';
+import { validateName, validateEmail, validatePhone, validatePassword } from './Exceptions';
 
 const Signin = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -11,15 +11,13 @@ const Signin = () => {
     name: "",
     email: "",
     phone: "",
-    password: "",
-    dob: ""
+    password: ""
   });
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     phone: "",
-    password: "",
-    dob: ""
+    password: ""
   });
 
   const handleSignup = () => {
@@ -46,8 +44,6 @@ const Signin = () => {
         return validatePhone(value);
       case "password":
         return validatePassword(value);
-      case "dob":
-        return validateDateOfBirth(value);
       default:
         return "";
     }
@@ -73,17 +69,15 @@ const Signin = () => {
     const phoneError = validatePhone(formData.phone);
     const nameError = validateName(formData.name);
     const passwordError = validatePassword(formData.password);
-    const dobError = validateDateOfBirth(formData.dob);
 
     setErrors({
       email: emailError,
       phone: phoneError,
       name: nameError,
-      password: passwordError,
-      dob: dobError
+      password: passwordError
     });
 
-    if (!emailError && !phoneError && !nameError && !passwordError && !dobError) {
+    if (!emailError && !phoneError && !nameError && !passwordError) {
       // Proceed with signup
       console.log("Signup successful");
     }
@@ -98,8 +92,7 @@ const Signin = () => {
       email: secondField === "email" ? emailOrPhoneError : "",
       phone: secondField === "phone" ? emailOrPhoneError : "",
       name: "",
-      password: passwordError,
-      dob: ""
+      password: passwordError
     });
 
     if (!emailOrPhoneError && !passwordError) {
@@ -123,7 +116,7 @@ const Signin = () => {
                 value={secondField === "email" ? formData.email : formData.phone}
                 onChange={handleInputChange}
               />
-              <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+              <label className="floating-label-text">
                 {secondField === "email" ? "Email" : "Phone"}
               </label>
               {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -171,7 +164,7 @@ const Signin = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.name ? 'floating-label-up' : ''}`}>Name</label>
+                <label className="floating-label-text">Name</label>
                 {errors.name && <p className="text-red-500">{errors.name}</p>}
               </div>
               <div className="floating-label">
@@ -183,7 +176,7 @@ const Signin = () => {
                   value={secondField === "email" ? formData.email : formData.phone}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+                <label className="floating-label-text">
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
                 {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -206,20 +199,8 @@ const Signin = () => {
                   value={formData.password}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.password ? 'floating-label-up' : ''}`}>Password</label>
+                <label className="floating-label-text">Password</label>
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
-              </div>
-              <div className="floating-label">
-                <input
-                  type="date"
-                  name="dob"
-                  placeholder=" "
-                  className="floating-input"
-                  value={formData.dob}
-                  onChange={handleInputChange}
-                />
-                <label className={`floating-label-text ${formData.dob ? 'floating-label-up' : ''}`}>Date of Birth</label>
-                {errors.dob && <p className="text-red-500">{errors.dob}</p>}
               </div>
               <div className="button-container mt-4">
                 <Button type="submit" variant="contained" color="primary" className="mr-2">Sign Up</Button>
@@ -244,7 +225,7 @@ const Signin = () => {
                   value={secondField === "email" ? formData.email : formData.phone}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.email || formData.phone ? 'floating-label-up' : ''}`}>
+                <label className="floating-label-text">
                   {secondField === "email" ? "Email" : "Phone"}
                 </label>
                 {secondField === "email" && errors.email && <p className="text-red-500">{errors.email}</p>}
@@ -267,7 +248,7 @@ const Signin = () => {
                   value={formData.password}
                   onChange={handleInputChange}
                 />
-                <label className={`floating-label-text ${formData.password ? 'floating-label-up' : ''}`}>Password</label>
+                <label className="floating-label-text">Password</label>
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
               </div>
               <div className="button-container mt-4">

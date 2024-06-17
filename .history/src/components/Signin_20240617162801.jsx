@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../Styles/Home.css';
-import { validateName, validateEmail, validatePhone, validatePassword, validateDateOfBirth } from './Validations';
+import { validateName, validateEmail, validatePhone, validatePassword, validateDateOfBirth } from './FormValidation';
 
 const Signin = () => {
   const [showSignup, setShowSignup] = useState(false);
