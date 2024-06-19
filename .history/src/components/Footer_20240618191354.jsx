@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <div className="container">
             <div className="links">
-                <Link href="" class="no-underline">About</Link>
-                <Link href="" class="no-underline">Contact</Link>
+                <Link href="" >About</Link>
+                <Link href="">Contact</Link>
             </div>
       </div>
   );

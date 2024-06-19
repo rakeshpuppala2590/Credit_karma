@@ -5,9 +5,10 @@ import '../Styles/footer.css'
 const Footer = () => {
     return (
         <div className="container">
-            <div className="links">
-                <Link href="" class="no-underline">About</Link>
-                <Link href="" class="no-underline">Contact</Link>
+            <div className="Links">
+                <Link href="/">About</Link>
+                &nbsp;
+                <Link href="/">Contact</Link>
             </div>
       </div>
   );
